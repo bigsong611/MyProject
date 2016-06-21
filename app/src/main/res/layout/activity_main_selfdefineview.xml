@@ -6,8 +6,10 @@
     >
     
     <com.bigsong.myproject.exercise02.CustomTitleView
-        android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="10dp"
         custom:csTitleText="3712"
         custom:csTitleTextColor="#ff0000"
         custom:csTitleTextSize="40sp"
