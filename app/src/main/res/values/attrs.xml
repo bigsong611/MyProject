@@ -4,10 +4,19 @@
     <attr name="csTitleText" format="string"/>
     <attr name="csTitleTextColor" format="color"/>
     <attr name="csTitleTextSize" format="dimension"/>
-    
+
+    <!-- 自定义textView -->
     <declare-styleable name="CustomTitleView">
         <attr name="csTitleText"/>
         <attr name="csTitleTextColor"/>
         <attr name="csTitleTextSize"/>
+    </declare-styleable>
+
+    <!-- 自定义progressBar-->
+    <declare-styleable name="CustomProgressBar">
+        <attr name="csFirstColor" format="color"/>
+        <attr name="csSecondColor" format="color"/>
+        <attr name="csCircleWidth" format="dimension"/>
+        <attr name="csSpeed" format="integer"/>
     </declare-styleable>
 </resources>

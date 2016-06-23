@@ -1,4 +1,4 @@
-package com.bigsong.myproject.exercise02;
+package com.bigsong.myproject.exercise02.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;

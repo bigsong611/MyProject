@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-    
+
+    <!--
+
     <com.bigsong.myproject.exercise02.CustomTitleView
         android:layout_width = "wrap_content"
         android:layout_height = "wrap_content"
@@ -14,5 +16,18 @@
         custom:csTitleTextColor="#ff0000"
         custom:csTitleTextSize="40sp"
         />
+
+        -->
+
+    <com.bigsong.myproject.exercise02.view.CustomProgressBar
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        custom:csFirstColor="#D4F668"
+        custom:csSecondColor="#2F9DD2"
+        custom:csCircleWidth="15dp"
+        custom:csSpeed="1"/>
 
 </RelativeLayout>
