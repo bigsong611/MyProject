@@ -8,7 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.bigsong.myproject.exercise01.activity_main_selfdefineviewgroup;
+import com.bigsong.myproject.exercise01.CustomViewGroupActivity;
 import com.bigsong.myproject.exercise02.MainActivity_selfDefineView;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = null;
                 switch (position) {
                     case 0:
-                        intent = new Intent(MainActivity.this, activity_main_selfdefineviewgroup.class);
+                        intent = new Intent(MainActivity.this, CustomViewGroupActivity.class);
                         break;
                     case 1:
                         intent = new Intent(MainActivity.this, MainActivity_selfDefineView.class);

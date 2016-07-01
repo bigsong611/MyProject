@@ -15,7 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".exercise01.activity_main_selfdefineviewgroup" />
+        <activity android:name=".exercise01.CustomViewGroupActivity" />
         <activity android:name=".exercise02.MainActivity_selfDefineView" />
     </application>
 

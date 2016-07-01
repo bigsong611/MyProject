@@ -10,10 +10,12 @@ import android.view.ViewGroup;
  */
 public class CustomImgContainer extends ViewGroup {
     public CustomImgContainer(Context context) {
+
         super(context);
     }
 
     public CustomImgContainer(Context context, AttributeSet attrs) {
+
         super(context, attrs);
     }
 
@@ -76,15 +78,57 @@ public class CustomImgContainer extends ViewGroup {
             }
 
             if (i == 1 || i == 3) {
-                rHeight = cHeight + cParams.topMargin + cParams.bottomMargin;
+                rHeight += cHeight + cParams.topMargin + cParams.bottomMargin;
             }
         }
 
+        width = Math.max(tWidth,bWidth);
+        height = Math.min(lHeight, rHeight);
+
+        setMeasuredDimension((widthMode == MeasureSpec.EXACTLY)?widthSize:width,(heightMode == MeasureSpec.EXACTLY)?heightSize:height);
     }
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
+        int cCount = getChildCount();
+        int cWidth = 0;
+        int cHeight = 0;
+        MarginLayoutParams cParams = null;
 
+        for (int i = 0; i < cCount; i++) {
+            View childView = getChildAt(i);
+            cWidth = childView.getMeasuredWidth();
+            cHeight = childView.getMeasuredHeight();
+            cParams = (MarginLayoutParams) childView.getLayoutParams();
+
+            int cl = 0, ct = 0, cr = 0, cb = 0;
+
+            switch (i) {
+                case 0:
+                    cl = cParams.leftMargin;
+                    ct = cParams.topMargin;
+                    break;
+                case 1:
+                    cl = getWidth() - cWidth - cParams.leftMargin - cParams.rightMargin;
+                    ct = cParams.topMargin;
+                    break;
+                case 2:
+                    cl = cParams.leftMargin;
+                    ct = getHeight() - cHeight - cParams.topMargin - cParams.bottomMargin;
+                    break;
+                case 3:
+                    cl = getWidth() - cWidth - cParams.leftMargin
+                            - cParams.rightMargin;
+                    ct = getHeight() - cHeight -cParams.topMargin - cParams.bottomMargin;
+                    break;
+            }
+            cr = cl + cWidth;
+            cb = ct + cHeight;
+            /**
+             * layout方法的参数 代表childView 相对于 parentView 的左，上，右，下的距离
+             */
+            childView.layout(cl, ct, cr, cb);
+        }
     }
 
     /**
